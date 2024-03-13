@@ -1,0 +1,10 @@
+C:\Users\User\Desktop\ado.net\Asinc\bin\Debug\Asinc.exe.config
+C:\Users\User\Desktop\ado.net\Asinc\bin\Debug\Asinc.exe
+C:\Users\User\Desktop\ado.net\Asinc\bin\Debug\Asinc.pdb
+C:\Users\User\Desktop\ado.net\Asinc\obj\Debug\Asinc.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\ado.net\Asinc\obj\Debug\Asinc.Form1.resources
+C:\Users\User\Desktop\ado.net\Asinc\obj\Debug\Asinc.Properties.Resources.resources
+C:\Users\User\Desktop\ado.net\Asinc\obj\Debug\Asinc.csproj.GenerateResource.cache
+C:\Users\User\Desktop\ado.net\Asinc\obj\Debug\Asinc.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\ado.net\Asinc\obj\Debug\Asinc.exe
+C:\Users\User\Desktop\ado.net\Asinc\obj\Debug\Asinc.pdb

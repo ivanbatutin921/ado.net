@@ -1,0 +1,7 @@
+C:\Users\User\Desktop\ado.net\2_project\obj\Debug\2_project.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\ado.net\2_project\obj\Debug\2_project.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\ado.net\2_project\bin\Debug\2_project.exe.config
+C:\Users\User\Desktop\ado.net\2_project\bin\Debug\2_project.exe
+C:\Users\User\Desktop\ado.net\2_project\bin\Debug\2_project.pdb
+C:\Users\User\Desktop\ado.net\2_project\obj\Debug\2_project.exe
+C:\Users\User\Desktop\ado.net\2_project\obj\Debug\2_project.pdb

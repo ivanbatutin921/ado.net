@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AuthorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BookSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Pages" Type="nvarchar(max)" />
+    <Property Name="Price" Type="nvarchar(max)" />
+    <Property Name="AuthorId" Type="int" Nullable="false" />
+    <Property Name="PublisherId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CountrySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PublisherSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PublisherName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AuthorBook">
+    <End Role="AuthorSet" Type="Self.AuthorSet" Multiplicity="1" />
+    <End Role="BookSet" Type="Self.BookSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookSet">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountryPublisher">
+    <End Role="CountrySet" Type="Self.CountrySet" Multiplicity="1" />
+    <End Role="PublisherSet" Type="Self.PublisherSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountrySet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PublisherSet">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PublisherBook">
+    <End Role="PublisherSet" Type="Self.PublisherSet" Multiplicity="1" />
+    <End Role="BookSet" Type="Self.BookSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PublisherSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookSet">
+        <PropertyRef Name="PublisherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LibraryModelStoreContainer">
+    <EntitySet Name="AuthorSet" EntityType="Self.AuthorSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookSet" EntityType="Self.BookSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CountrySet" EntityType="Self.CountrySet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PublisherSet" EntityType="Self.PublisherSet" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AuthorBook" Association="Self.FK_AuthorBook">
+      <End Role="AuthorSet" EntitySet="AuthorSet" />
+      <End Role="BookSet" EntitySet="BookSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountryPublisher" Association="Self.FK_CountryPublisher">
+      <End Role="CountrySet" EntitySet="CountrySet" />
+      <End Role="PublisherSet" EntitySet="PublisherSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PublisherBook" Association="Self.FK_PublisherBook">
+      <End Role="PublisherSet" EntitySet="PublisherSet" />
+      <End Role="BookSet" EntitySet="BookSet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

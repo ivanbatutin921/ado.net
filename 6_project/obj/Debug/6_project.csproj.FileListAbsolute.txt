@@ -1,0 +1,7 @@
+C:\Users\User\Desktop\ado.net\6_project\obj\Debug\6_project.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\ado.net\6_project\obj\Debug\6_project.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\ado.net\6_project\bin\Debug\6_project.exe.config
+C:\Users\User\Desktop\ado.net\6_project\bin\Debug\6_project.exe
+C:\Users\User\Desktop\ado.net\6_project\bin\Debug\6_project.pdb
+C:\Users\User\Desktop\ado.net\6_project\obj\Debug\6_project.exe
+C:\Users\User\Desktop\ado.net\6_project\obj\Debug\6_project.pdb

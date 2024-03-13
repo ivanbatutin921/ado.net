@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище P_11_CompanyModelContainer" CdmEntityContainer="P_11_CompanyEntities">
+    <FunctionImportMapping FunctionImportName="stp_CustomerALL" FunctionName="Хранилище P_11_CompanyModel.stp_CustomerALL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="P_11_CompanyModel.stp_CustomerALL_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="stp_CustomerByID" FunctionName="Хранилище P_11_CompanyModel.stp_CustomerByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="P_11_CompanyModel.stp_CustomerByID_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="stp_CustomerAdd" FunctionName="Хранилище P_11_CompanyModel.stp_CustomerAdd" />
+    <FunctionImportMapping FunctionImportName="stp_EmployeeALL" FunctionName="Хранилище P_11_CompanyModel.stp_EmployeeALL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="P_11_CompanyModel.stp_EmployeeALL_Result">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="stp_EmployeeID" FunctionName="Хранилище P_11_CompanyModel.stp_EmployeeID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="P_11_CompanyModel.stp_EmployeeID_Result">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="stp_CustomerDelete" FunctionName="Хранилище P_11_CompanyModel.stp_CustomerDelete" />
+  </EntityContainerMapping>
+</Mapping>

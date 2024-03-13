@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="LibraryModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="LibraryModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AuthorSet" EntityType="LibraryModel.Author" />
+    <EntitySet Name="PublisherSet" EntityType="LibraryModel.Publisher" />
+    <EntitySet Name="BookSet" EntityType="LibraryModel.Book" />
+    <AssociationSet Name="AuthorBook" Association="LibraryModel.AuthorBook">
+      <End Role="Author" EntitySet="AuthorSet" />
+      <End Role="Book" EntitySet="BookSet" />
+    </AssociationSet>
+    <AssociationSet Name="PublisherBook" Association="LibraryModel.PublisherBook">
+      <End Role="Publisher" EntitySet="PublisherSet" />
+      <End Role="Book" EntitySet="BookSet" />
+    </AssociationSet>
+    <EntitySet Name="CountrySet" EntityType="LibraryModel.Country" />
+    <AssociationSet Name="CountryPublisher" Association="LibraryModel.CountryPublisher">
+      <End Role="Country" EntitySet="CountrySet" />
+      <End Role="Publisher" EntitySet="PublisherSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Book" Relationship="LibraryModel.AuthorBook" FromRole="Author" ToRole="Book" />
+  </EntityType>
+  <EntityType Name="Publisher">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PublisherName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Book" Relationship="LibraryModel.PublisherBook" FromRole="Publisher" ToRole="Book" />
+    <NavigationProperty Name="Country" Relationship="LibraryModel.CountryPublisher" FromRole="Publisher" ToRole="Country" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Pages" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Price" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Author" Relationship="LibraryModel.AuthorBook" FromRole="Book" ToRole="Author" />
+    <Property Name="AuthorId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Publisher" Relationship="LibraryModel.PublisherBook" FromRole="Book" ToRole="Publisher" />
+    <Property Name="PublisherId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="AuthorBook">
+    <End Type="LibraryModel.Author" Role="Author" Multiplicity="1" />
+    <End Type="LibraryModel.Book" Role="Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PublisherBook">
+    <End Type="LibraryModel.Publisher" Role="Publisher" Multiplicity="1" />
+    <End Type="LibraryModel.Book" Role="Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publisher">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="PublisherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Publisher" Relationship="LibraryModel.CountryPublisher" FromRole="Country" ToRole="Publisher" />
+  </EntityType>
+  <Association Name="CountryPublisher">
+    <End Type="LibraryModel.Country" Role="Country" Multiplicity="1" />
+    <End Type="LibraryModel.Publisher" Role="Publisher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Publisher">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

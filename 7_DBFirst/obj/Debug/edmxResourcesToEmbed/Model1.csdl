@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="P_11_CompanyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="P_11_CompanyEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="stp_CustomerALL" ReturnType="Collection(P_11_CompanyModel.stp_CustomerALL_Result)" />
+    <FunctionImport Name="stp_CustomerByID" ReturnType="Collection(P_11_CompanyModel.stp_CustomerByID_Result)">
+      <Parameter Name="customerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="stp_CustomerAdd">
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="DateOfBirth" Mode="In" Type="DateTime" />
+      <Parameter Name="CustomerID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="stp_EmployeeALL" ReturnType="Collection(P_11_CompanyModel.stp_EmployeeALL_Result)" />
+    <FunctionImport Name="stp_EmployeeID" ReturnType="Collection(P_11_CompanyModel.stp_EmployeeID_Result)">
+      <Parameter Name="employeeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="stp_CustomerDelete">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="Result" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="stp_CustomerALL_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" />
+    <Property Type="String" Name="LastName" Nullable="false" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+    <Property Type="Binary" Name="Picture" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="stp_CustomerByID_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" />
+    <Property Type="String" Name="LastName" Nullable="false" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+    <Property Type="Binary" Name="Picture" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="stp_EmployeeALL_Result">
+    <Property Type="Int32" Name="EmployeeID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="BirthDate" Nullable="true" />
+    <Property Type="Int32" Name="PositionID" Nullable="true" />
+    <Property Type="Int32" Name="Salary" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="stp_EmployeeID_Result">
+    <Property Type="Int32" Name="EmployeeID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="BirthDate" Nullable="true" />
+    <Property Type="Int32" Name="PositionID" Nullable="true" />
+    <Property Type="Int32" Name="Salary" Nullable="true" />
+  </ComplexType>
+</Schema>

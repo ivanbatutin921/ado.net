@@ -1,0 +1,7 @@
+C:\Users\User\Desktop\ado.net\2_HW\bin\Debug\2_HW.exe.config
+C:\Users\User\Desktop\ado.net\2_HW\bin\Debug\2_HW.exe
+C:\Users\User\Desktop\ado.net\2_HW\bin\Debug\2_HW.pdb
+C:\Users\User\Desktop\ado.net\2_HW\obj\Debug\2_HW.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\ado.net\2_HW\obj\Debug\2_HW.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\ado.net\2_HW\obj\Debug\2_HW.exe
+C:\Users\User\Desktop\ado.net\2_HW\obj\Debug\2_HW.pdb
